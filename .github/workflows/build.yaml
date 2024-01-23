@@ -6,6 +6,7 @@ on:
       - 'v*.*.*'
     branches:
       - main
+      - gh_actions_test
   pull_request:
     branches:
       - main
@@ -145,6 +146,9 @@ jobs:
         make
         cd ..
         pwd
+        ls -lh /Library/Frameworks/Python.framework/Versions/3.12/include/python3.12
+        ls -lh /Library/Frameworks/Python.framework/Versions/3.12/include/python3.12/cpython
+        export CFLAGS="$CFLAGS -I/Library/Frameworks/Python.framework/Versions/3.12/include/python3.12/cpython"
 
         wget -q https://github.com/rrwick/Badread/archive/refs/tags/v0.2.0.tar.gz
         tar xf v0.2.0.tar.gz
