@@ -125,6 +125,11 @@ jobs:
     - name: Check out code for the build
       uses: actions/checkout@v2
 
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
     - name: Install dependencies
       run: |
         pip3 install pytest pyfastaq
@@ -146,12 +151,12 @@ jobs:
         make
         cd ..
         pwd
-        ls -lh /Library/Frameworks/Python.framework/Versions/3.12/include/python3.12
-        ls -lh /Library/Frameworks/Python.framework/Versions/3.12/include/python3.12/cpython
-        mkdir test_lib
-        cp /Library/Frameworks/Python.framework/Versions/3.12/include/python3.12/cpython/longintrepr.h test_lib/
-        export CFLAGS="$CFLAGS -I$PWD/test_lib"
-        export CPPFLAGS="$CPPFLAGS -I$PWD/test_lib"
+        #ls -lh /Library/Frameworks/Python.framework/Versions/3.12/include/python3.12
+        #ls -lh /Library/Frameworks/Python.framework/Versions/3.12/include/python3.12/cpython
+        #mkdir test_lib
+        #cp /Library/Frameworks/Python.framework/Versions/3.12/include/python3.12/cpython/longintrepr.h test_lib/
+        #export CFLAGS="$CFLAGS -I$PWD/test_lib"
+        #export CPPFLAGS="$CPPFLAGS -I$PWD/test_lib"
         #export CFLAGS="$CFLAGS -I/Library/Frameworks/Python.framework/Versions/3.12/include/python3.12"
         #export CPPFLAGS="$CPPFLAGS -I/Library/Frameworks/Python.framework/Versions/3.12/include/python3.12"
 
