@@ -118,7 +118,7 @@ jobs:
 
   mac_build:
     name: Build mac os
-    runs-on: macos-11
+    runs-on: macos-13
     steps:
 
     - name: Check out code for the build
